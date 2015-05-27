@@ -1,0 +1,28 @@
+# Maintainer: Arthur Zamarin <arthurzam@gmail.com> 
+
+pkgname=dcap
+pkgver=2.47.8
+pkgrel=4
+pkgdesc="Client Tools for dCache"
+arch=(i686 x86_64)
+url="https://github.com/dCache/$pkgname"
+license=('LGPL')
+depends=('openssl' 'krb5')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/dCache/$pkgname/archive/${pkgver}.tar.gz")
+sha256sums=('a52702ac72cce35745ca0ac37bdb4aba4fbef2dfa571eda06bd8c7d9e80efe21')
+
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+  sh bootstrap.sh
+  ./configure --prefix=/usr
+}
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+}
