@@ -1,0 +1,21 @@
+pkgbase = openalchemist-svn
+	pkgdesc = Tetris like game, but where you can take your time.
+	pkgver = 571
+	pkgrel = 1
+	url = http://openalchemist.com/
+	arch = i686
+	arch = x86_64
+	license = GPL
+	license = CCPL:"by-sa"
+	makedepends = gcc
+	makedepends = make
+	makedepends = pkg-config
+	makedepends = subversion
+	makedepends = zip
+	depends = clanlib<2.1.0
+	provides = openalchemist
+	conflicts = openalchemist
+	options = !libtool
+
+pkgname = openalchemist-svn
+

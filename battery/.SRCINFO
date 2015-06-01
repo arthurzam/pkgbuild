@@ -1,0 +1,12 @@
+pkgbase = battery
+	pkgdesc = Prints last full and remaining battery capacities in plaintext
+	pkgver = 1.0
+	pkgrel = 1
+	url = http://aligunduz.org/
+	arch = i686
+	arch = x86_64
+	license = Public Domain
+	depends = acpi
+
+pkgname = battery
+
