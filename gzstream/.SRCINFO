@@ -1,7 +1,7 @@
 pkgbase = gzstream
 	pkgdesc = C++ wrapper providing stream classes for zlib
 	pkgver = 1.5
-	pkgrel = 1
+	pkgrel = 2
 	url = http://www.cs.unc.edu/Research/compgeom/gzstream
 	arch = i686
 	arch = x86_64
