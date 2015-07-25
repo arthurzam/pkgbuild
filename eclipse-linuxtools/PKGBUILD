@@ -9,7 +9,7 @@ pkgdesc="Eclipse Linux Tools Project"
 url="http://www.eclipse.org/linuxtools"
 arch=('any')
 license=('EPL')
-depends=('eclipse-cdt')
+depends=('eclipse-cpp')
 optdepends=(
 	'eclipse-ptp: remote profiling'
 	'eclipse-rse: LTTng and remote profiling'
@@ -22,7 +22,7 @@ source=("http://www.eclipse.org/downloads/download.php?r=1&file=/linuxtools/linu
 sha256sums=('541d4f75911b9f52a81b26ded143deea52d46fc08a994a686b6edb9972a2af72')
 
 package() {
-  _dest="${pkgdir}/usr/share/eclipse/dropins/linuxtools/eclipse"
+  _dest="${pkgdir}/usr/lib/eclipse/dropins/linuxtools/eclipse"
 
   cd "${srcdir}"
 
