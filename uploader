@@ -1,0 +1,19 @@
+#!/bin/bash
+cd $(dirname $BASH_SOURCE)
+srcDir=`pwd`
+
+dstDir="/tmp"
+mkdir -p $dstDir
+
+for pkg in $@; do
+    cd "$dstDir"
+    git clone "ssh+git://aur@aur.archlinux.org/${pkg}.git"
+    cd "${pkg}"
+    cp "${srcDir}/${pkg}/"* .
+    mksrcinfo
+    git add -u
+    git commit -m "Update"
+    git push
+    cd ..
+    rm -rf "${pkg}"
+done
