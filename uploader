@@ -6,14 +6,15 @@ dstDir="/tmp"
 mkdir -p $dstDir
 
 for pkg in $@; do
+    pkg=$(echo $pkg | sed -e "s@/@@")
     cd "$dstDir"
-    git clone "ssh+git://aur@aur.archlinux.org/${pkg}.git"
+    git clone "ssh+git://aur@aur.archlinux.org/${pkg}.git" || continue
     cd "${pkg}"
     cp "${srcDir}/${pkg}/"* .
-    mksrcinfo
-    git add -u
-    git commit -m "Update"
-    git push
+    mksrcinfo || continue
+    git add -u || continue
+    git commit -m "Update" || continue
+    git push || continue
     cd ..
     rm -rf "${pkg}"
 done
