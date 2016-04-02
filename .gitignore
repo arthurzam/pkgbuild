@@ -1,6 +1,8 @@
-*.tar.gz
 src/
 pkg/
 *.tar
+*.tar.*
 *.zip
 *.xpi
+*.gz
+*.jar
