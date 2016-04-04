@@ -6,3 +6,4 @@ pkg/
 *.xpi
 *.gz
 *.jar
+*.tgz
