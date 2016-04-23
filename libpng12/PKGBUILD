@@ -7,7 +7,7 @@
 pkgname=libpng12
 _realname=libpng
 pkgver=1.2.56
-pkgrel=2
+pkgrel=3
 pkgdesc="A collection of routines used to create PNG format graphics files"
 arch=('i686' 'x86_64' 'armv7h')
 url="http://www.libpng.org/pub/png/libpng.html"
@@ -26,10 +26,11 @@ prepare() {
 build() {
   cd "${srcdir}/${_realname}-${pkgver}"
 
-  libtoolize --force --copy
-  aclocal
-  autoconf
-  automake --add-missing
+  # Removed bacause problems with automake system; Check in future updates
+  #libtoolize --force --copy
+  #aclocal
+  #autoconf
+  #automake --add-missing
 
   ./configure --prefix=/usr
 
