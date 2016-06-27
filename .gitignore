@@ -7,3 +7,4 @@ pkg/
 *.gz
 *.jar
 *.tgz
+*.part
